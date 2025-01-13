@@ -33,4 +33,12 @@
 * Stundenplan
 * Zeit bis man zur Schule muss (Countdown)
 * Wecker
+
+## Was man in der Schule vorbeiten kann
+* Logo für die App 
+  * Groß für den Bildschirm oben
+  * Für das App-Icon
+* Den Bildschirmaufbau
+* Die "Einstellungen"-Seite (mit programmieren)
+
 | ? | https://booteditor.com/ | free | Windows Tool |
