@@ -17,6 +17,8 @@
 | ** | https://angrytools.com/bootstrap/editor/ | online, kostenlos | Kein WYSIWYG Editor, aber cool |
 ? = nicht getestet
 
+## Bootstrap Anleitung
+* https://getbootstrap.com/docs/4.6/components/card/
 
 ## Bootstrap Theme generators
 
@@ -25,4 +27,20 @@
 | --- | --- | --- | --- |
 | ** | bootstrap.build | kostenlos, online | Theme Builder und kostenlose Templates. Das ist ein Online-Editor für die Konfiguration der Theme-Farben, Abstände etc |
 | ? | https://pikock.github.io/bootstrap-magic/ | ? | ? |
+
+## App Bestandteile
+
+* To Do Liste (mit Abhaken)
+* Wetter
+* Stundenplan
+* Zeit bis man zur Schule muss (Countdown)
+* Wecker
+
+## Was man in der Schule vorbeiten kann
+* Logo für die App 
+  * Groß für den Bildschirm oben
+  * Für das App-Icon
+* Den Bildschirmaufbau
+* Die "Einstellungen"-Seite (mit programmieren)
+
 | ? | https://booteditor.com/ | free | Windows Tool |
