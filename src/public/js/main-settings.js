@@ -10,6 +10,7 @@ function showExistingDates() {
     $.each(data, function (key, value) { 
       console.log("set", key, value)
       $("input[name='"+key+"']").val(value);
+      $("textarea[name='"+key+"']").val(value);
     });
     return data.length
 }
