@@ -37,11 +37,27 @@ $(document).ready(function(){
     if (todo) {
       const todol = "todo" + (++currentTodo)
       console.log("todo", todo, todol);
-      $('#todolist').append('<div class="form-check"><input class="form-check-input" type="checkbox" value="'+todol+'" id="'+todol+'"><label for="'+todol+'" class="form-check-label">'+todo+'</label></div>'
+      $('#todolist').append('<div class="form-check"><input class="form-check-input" type="checkbox" value="'+todo.replace('"',"'")+'" id="'+todol+'"><label for="'+todol+'" class="form-check-label">'+todo+'</label></div>'
         )
       }
    }
 
 
+  var cloneCount = 0;
+  $("#todolist input").click(function(){
+    const todoItem = $(this).val();
+    const todoStatus = $(this).is(':checked');
+    console.log("val", todoStatus, todoItem)
+    $('#liveToast')
+        .clone()
+        .attr('id', 'liveToast'+ (++cloneCount))
+        .insertAfter('[id^=liveToast]:last') 
+          //            ^-- Use '#id' if you want to insert the cloned 
+          //                element in the beginning
+    $('#liveToast'+cloneCount+' .toast-body').text((todoStatus?'Resolved ':'Opened ') + todoItem); //<--For DEMO
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(document.getElementById("liveToast" + cloneCount));
+    toastBootstrap.show()
+
+  }); 
 });
 
