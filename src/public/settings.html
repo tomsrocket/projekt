@@ -8,47 +8,61 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js "></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+	<!--link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" -->
+		<link href="css/bootstrap-mint.min.css" rel="stylesheet">
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
+	
 	<script src="js/jquery-clock-timepicker.min.js"></script>
 
-
+	<link rel="icon" href="img/organixify-icon.svg" sizes="any" type="image/svg+xml">
+	<link rel="shortcut icon" type="image/svg+xml" href="img/organixify-icon.svg">
+	<link rel="apple-touch-icon" href="img/organixify-icon.svg">
 
 	<script src="js/main-settings.js"></script>
-
-	<link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
-
-	<!-- link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script -->
 </head>
 
+
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
+	<nav class="navbar bg-primary fixed-top">
+		<div class="row">
+			<div class="col-10">
+				<img class="ms-2" src="img/organixify-logo-3.png" style="width:100%">
+			</div>
+			<div class="col-2 d-flex align-items-center">
 
-
+			</div>
+		</div>
 	</nav>
 
 	<div class="container-fluid">
-		<div class="row">
+		adsf
+		<div class="row mt-4">
+			d
 			<div class="col-md-12">
 				<form>
-
+<h1 class="mt-2">Settings</h1>
 					<!-- div class="alert alert-primary" role="alert">
 						A simple primary alert—check it out!
 					</div -->
 
-					<h2>To Do List Entries</h2>
+					<div class="card bg-light my-3">
+						<div class="card-body">
+							<h2>To Do List Entries</h2>
 
 					<div class="form-group">
-						<label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+						<label for="exampleFormControlTextarea1" class="form-label">Please enter one ToDo item per line:</label>
 						<textarea class="form-control" name="todolist" rows="8"></textarea>
 					</div>
+				</div></div>
+				<style>
+					.form-group{ margin-bottom:7px }
+				</style>
+
+				<div class="card bg-light my-3">
+					<div class="card-body">
 
 					<h2>General settings</h2>
 
@@ -60,16 +74,16 @@
 
 
 					<div class="form-group">
-						<label for="name">Get up time</label>
+						<label for="name">Get up time</label><br />
 						<input name="startTime" value="6:45" type="text" class="clock-field form-control" id="startTime" aria-describedby="nameHelp">
-						<small id="nameHelp" class="form-text text-muted">Please enter the time when you get up</small>
+						<br /><small id="nameHelp" class="form-text text-muted">Please enter the time when you get up.</small>
 					</div>
 
 
 					<div class="form-group">
-						<label for="endTime">Leave time</label>
+						<label for="endTime">Leave time</label><br />
 						<input name="endTime" type="text" value="7:30" class=" clock-field form-control" >
-						<small class="form-text text-muted">Please enter the time you have to leave the
+						<br /><small class="form-text text-muted">Please enter the time you have to leave the
 							house.</small>
 					</div>
 
@@ -78,6 +92,10 @@
 						<input type="text" class="form-control" name="hometown" aria-describedby="htHelp" value="Münster"> 
 						<small id="htHelp" class="form-text text-muted">Please enter the city where you live.</small>
 					</div>
+				</div></div>
+
+				<div class="card bg-light my-3">
+					<div class="card-body">
 
 					<h2>Time table for school</h2>
 					<small class="form-text text-muted">Please enter comma separated list of school subjects.</small>
@@ -101,10 +119,13 @@
 						<label for="name">Friday</label>
 						<input type="text" class="form-control" name="timetable-5" />
 					</div>
-					<div class="form-group">
-						<input type="button" class="btn btn-primary "  id="btn-submit" value="Save settings" />
-					</div>
-				</form>
+				</div></div>
+
+				<div class="form-group mb-4">
+					<input type="button" class="btn btn-primary " style="width:100%" id="btn-submit" value="Save settings" />
+				</div>
+
+			</form>
 			</div>
 		</div>
 	</div>
