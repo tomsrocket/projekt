@@ -6,12 +6,18 @@ console.log("TEST2")
 $(document).ready(function(){
 
   const rawdata = localStorage.getItem(dataKey);
+  if (! rawdata) {
+    $('#staticBackdrop').modal('show'); 
+    return;
+  }
+
+
+
   const data = JSON.parse(rawdata);
   $.each(data, function (key, value) { 
     console.log("set", key, value)
     $(".var-"+key).html(value);
   });
-  //  return data.length
 
   var mydate = new Date();
   const options = { weekday: "long" };
@@ -48,7 +54,7 @@ $(document).ready(function(){
   }
   paintLessons(mydate);
 
-    const todolist = data["todolist"];
+  const todolist = data["todolist"];
   const todos = todolist.split("\n");
   var currentTodo = 0
   for (const todo of todos) {
