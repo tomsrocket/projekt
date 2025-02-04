@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+2"2<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,21 +21,40 @@
 	<link rel="apple-touch-icon" href="img/organixify-icon.svg">
 
 	<script src="js/main.js"></script>
+
+	<style>
+		/* mint colored table cell background */
+		.table tr.mint td, .table tr.mint th {
+			background-color:#e4f3ef!important;
+		}
+		
+		/* weather image cropping */
+		div#weatherImg {
+		  background: url("https://www.yr.no/nb/innhold/2-2867543/meteogram.svg");
+		  background-position: 0 -110px;
+		  width: 400px;
+		  height: 150px;
+		}
+		
+		</style>
 </head>
 
 <body>
 
 	<nav class="navbar bg-primary fixed-top">
-		<div class="row">
+		<div class="container-fluid" style="padding:0">
+
+		<div class="row w-100">
 			<div class="col-10">
-				<img class="ms-2" src="img/organixify-logo-3.png" style="width:100%">
+				<img class="ms-2" src="img/organixify-logo-3.png" style="width:100%;max-width:350px">
 			</div>
-			<div class="col-2 d-flex align-items-center">
+			<div class="col-2 d-flex align-items-center text-end flex-row-reverse">
 					<a class="btn btn-dark" href="settings.html">
 						<i class="bi bi-gear-fill"></i>
 					</a>
 				
 			</div>
+		</div>
 		</div>
 	</nav>
 
@@ -53,25 +72,25 @@
 	</div>
 	
 
-	<div class="container-fluid">
+	<div class="container">
 
-		<div style="height:80px"></div>
+		<div style="height:60px"></div>
 
 		<div class="row">
-			<div class="col-md-6">
-				<div class="mt-2 mb-4 p-4 bg-primary text-white rounded">
+			<div class="col-md-6 d-flex align-items-stretch">
+				<div class="w-100 mt-2 mb-4 p-4 bg-primary text-white rounded">
 					<h2>
 						Hello <span class="var-name">{$Name}</span>
 					</h2>Today is <span class="vv-weekday">{$Weekday}</span>.
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 d-flex align-items-stretch">
 				<div class="card">
 					<h5 class="card-header">
 						Weather in <span class="var-hometown">
 					</h5>
 					<div class="card-body" style="overflow:hidden">
-						<img style="margin-top: -30%;" src="https://www.yr.no/nb/innhold/2-2867543/meteogram.svg" />
+						<div id="weatherImg"></div>
 					</div>
 				</div>
 			</div>
@@ -93,9 +112,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="row mt-4">
-			<div class="col-md-12">
-				<div class="card text-black bg-warning">
+
+		<div class="row">
+			<div class="col-md-6 d-flex align-items-stretch">
+				<div class="mt-4 card text-black bg-warning w-100">
 					<h5 class="card-header">
 						To do list
 					</h5>
@@ -105,15 +125,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-<style>
-	.table tr.mint td, .table tr.mint th {
-	background-color:#e4f3ef!important;
-}
-</style>
-		<div class="row my-4">
-			<div class="col-md-12">
-				<div class="card text-white bg-secondary">
+			<div class="col-md-6 d-flex align-items-stretch">
+				<div class="card mt-4 text-white bg-secondary w-100">
 					<h5 class="card-header">
 						Timetable <span class="vv-weekday">${Weekday}</span>
 					</h5>
@@ -139,8 +152,19 @@
 		</div>
 
 
+
 	</div>
 
+	<div class="mt-4 container-fluid" style="padding:0">
 
+	<footer id="footer" class="text-white bg-dark text-center p-4">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Code released at <a href="https://github.com/tomsrocket/projekt">Github</a>.</p>
+            <p>Weather Data from MET Norway.</p>
 
+          </div>
+        </div>
+      </footer>
+</div>
 </body>
