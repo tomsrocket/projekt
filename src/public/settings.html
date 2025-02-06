@@ -17,11 +17,17 @@
 
 	<script src="js/jquery-clock-timepicker.min.js"></script>
 
+	<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.98/dist/add-to-homescreen.min.css"
+	/>
+	<script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.98/dist/add-to-homescreen.min.js"></script>
+
 	<link rel="icon" href="img/organixify-icon.svg" sizes="any" type="image/svg+xml">
 	<link rel="shortcut icon" type="image/svg+xml" href="img/organixify-icon.svg">
 	<link rel="apple-touch-icon" href="img/organixify-icon.svg">
 
-	<script src="js/main-settings.js"></script>
+	<script src="js/main-settings.js?v2"></script>
 
 	<style>
 		.container {
@@ -36,7 +42,25 @@
 			color: #eee
 		}
 	</style>
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		window.AddToHomeScreenInstance = window.AddToHomeScreen({
+			appName: 'Organixify',                                   // Name of the app.
+			appNameDisplay: 'standalone',                          // If set to 'standalone' (the default), the app name will be diplayed
+			appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
+			assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.98/dist/assets/img/',  // Link to directory of library image assets.
+			maxModalDisplayCount: 1,                              // If set, the modal will only show this many times.
+			displayOptions:{ showMobile: true, showDesktop: true }, // show on mobile/desktop [Optional] Default: show everywhere
+			allowClose: true, // allow the user to close the modal by tapping outside of it [Optional. Default: true]
+		});		
+	  											 // [optional] language.  If left blank, then language is auto-decided from (1) URL param locale='..' (e.g. /?locale=es) (2) Browser language settings
+	  	document.getElementById('homescreenBtn').addEventListener('click', function () {
+			console.log("pressed")
+			window.AddToHomeScreenInstance.show('en');
+		});
+	});
 
+	</script>
 </head>
 
 
@@ -54,11 +78,50 @@
 
 	<div style="height:60px"></div>
 
+
+	<!-- Modal -->
+	<div class="modal fade" id="shareModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog ">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Share this app</h5>
+					<!-- button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button -->
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<img src="img/qr-code.png" style="width:70%" /><br />
+						App Url: <br />
+						https://tomsrocket.github.io/projekt<br /><br />
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a class="btn btn-primary btn-lg" href="settings.html">OK</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container">
 		<div class="row mt-4">
 			<div class="col-md-12">
 				<form>
-					<h1 class="mt-2">Settings</h1>
+					<div class="row w-100" class="mt-2">
+						<div class="col">
+							<h1>Settings</h1>
+						</div>
+						<div class="col d-flex align-items-center text-end flex-row-reverse">
+							<a class="btn btn-primary" id="shareBtn">
+								<i class="bi bi-share-fill"></i>
+							</a>
+							<div class="px-1">
+							<a class="btn btn-primary" id="homescreenBtn">
+								<i class="bi bi-house-add-fill"></i>
+							</a>
+							</div>
+						</div>
+					</div>
+
 					<!-- div class="alert alert-primary" role="alert">
 						A simple primary alert—check it out!
 					</div -->

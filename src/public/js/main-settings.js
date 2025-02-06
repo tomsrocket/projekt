@@ -7,16 +7,24 @@ console.log("localstorage key ", dataKey)
 function showExistingDates() {
     const rawdata = localStorage.getItem(dataKey);
     const data = JSON.parse(rawdata);
-    $.each(data, function (key, value) { 
-      console.log("set", key, value)
-      $("input[name='"+key+"']").val(value);
-      $("textarea[name='"+key+"']").val(value);
-    });
-    return data.length
+    if (data) {
+      $.each(data, function (key, value) { 
+        console.log("set", key, value)
+        $("input[name='"+key+"']").val(value);
+        $("textarea[name='"+key+"']").val(value);
+      });
+      return data.length;
+    } else {return 0;}
 }
 
 
 $(document).ready(function () {
+
+  $('#shareBtn').click(function() {
+    console.log("Share button clicked");
+    $('#shareModal').modal('show');
+  })
+
 
   $('.clock-field').clockTimePicker({
     duration: true,
@@ -80,5 +88,7 @@ $(document).ready(function () {
   } else {
     $("#btn-download").hide();
   }
+
+
 });
 
