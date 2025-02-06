@@ -24,7 +24,12 @@ $(document).ready(function () {
     console.log("Share button clicked");
     $('#shareModal').modal('show');
   })
+  $('#modalClose').click(function() {
+    console.log("Share modal close");
+    $('#shareModal').modal('hide');
+  })
 
+  
 
   $('.clock-field').clockTimePicker({
     duration: true,

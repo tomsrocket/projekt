@@ -27,7 +27,7 @@
 	<link rel="shortcut icon" type="image/svg+xml" href="img/organixify-icon.svg">
 	<link rel="apple-touch-icon" href="img/organixify-icon.svg">
 
-	<script src="js/main-settings.js?v2"></script>
+	<script src="js/main-settings.js?v3"></script>
 
 	<style>
 		.container {
@@ -50,7 +50,7 @@
 			appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
 			assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.98/dist/assets/img/',  // Link to directory of library image assets.
 			maxModalDisplayCount: 1,                              // If set, the modal will only show this many times.
-			displayOptions:{ showMobile: true, showDesktop: true }, // show on mobile/desktop [Optional] Default: show everywhere
+			//displayOptions:{ showMobile: true, showDesktop: true }, // show on mobile/desktop [Optional] Default: show everywhere
 			allowClose: true, // allow the user to close the modal by tapping outside of it [Optional. Default: true]
 		});		
 	  											 // [optional] language.  If left blank, then language is auto-decided from (1) URL param locale='..' (e.g. /?locale=es) (2) Browser language settings
@@ -96,7 +96,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<a class="btn btn-primary btn-lg" href="settings.html">OK</a>
+					<a class="btn btn-primary btn-lg" id="modalClose">OK</a>
 				</div>
 			</div>
 		</div>
